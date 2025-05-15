@@ -13,7 +13,7 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: mvn clean install
+- script: cd /home/Thushar/DevOps/MyMavenApp , mvn clean install 
   displayName: 'Installing'
 
 - script: java -jar target/MyMavenApp-3.0-SNAPSHOT.jar
