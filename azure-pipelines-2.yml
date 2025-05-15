@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
@@ -13,8 +8,12 @@ steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
-- script: cd /home/Thushar/DevOps/MyMavenApp , mvn clean install 
-  displayName: 'Installing'
+- script: |
+    cd /home/Thushar/DevOps/MyMavenApp
+    mvn clean install
+  displayName: 'Build with Maven'
 
-- script: java -jar target/MyMavenApp-3.0-SNAPSHOT.jar
+- script: |
+    cd /home/Thushar/DevOps/MyMavenApp
+    java -jar target/MyMavenApp-3.0-SNAPSHOT.jar
   displayName: 'Run jar file'
